@@ -1,0 +1,8 @@
+	Nama Makanan:Nasi
+	Harga Makanan:5000
+	Nama Makanan:Mie
+	Harga Makanan:5000
+	Nama Makanan:Bakso
+	Harga Makanan:10000
+	Nama Makanan:Gado gado
+	Harga Makanan:10000

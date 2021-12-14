@@ -1,0 +1,6 @@
+	Nama Minuman:Air
+	Harga Minuman:2000
+	Nama Minuman:Es Teh
+	Harga Minuman:4000
+	Nama Minuman:Coca-Cola
+	Harga Minuman:3000
