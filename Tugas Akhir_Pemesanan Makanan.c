@@ -11,7 +11,7 @@ int main(void) {
   start(); //Prosesdur yang Nantinya dipanggil untuk memulai program
 }
 
-//Haloooooooo
+//halooo
 //Prosedur start
 void start(){
 	int pilihan; //Variable yang digunakan untuk memilih menu
