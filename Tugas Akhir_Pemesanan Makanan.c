@@ -11,7 +11,7 @@ void daftarMenu(); //Prosedur yang digunakan untuk menampilkan daftar makanan da
 void tambahMenu(); //Prosedur yang digunakan untuk menambahkan makanan ataupun minuman
 void tambahMakanan(); // Prosedur yang digunakan untuk menambahkan makanan
 void tambahMinuman(); //Prosedur yang digunakan untuk menambahkan minuman
-
+void user(); //Prosedur untuk Customer yang ingin berbelanja
 
 int main(void) {
   start(); //Prosesdur yang Nantinya dipanggil untuk memulai program
@@ -36,6 +36,7 @@ void start(){
 		scanf("%d",&pilihanMenuUtama);
 		if(pilihanMenuUtama==1){
 			system("cls"); //Membersihkan tampilan yang ada pada command prompt
+			user();
 		}
 		else if(pilihanMenuUtama==2){
 			system("cls");
@@ -285,4 +286,58 @@ void tambahMinuman(){
 	}
 }
 
+void user(){
+	int usermakananminuman;
+	printf ("\t\t\t|====================================================|\n");      
+	printf ("\t\t\t|           Selamat Datang di Kedai F                |\n");
+	printf ("\t\t\t|----------------------------------------------------|\n");
+	printf ("\t\t\t|Silahkan pilih menu yang diinginkan                 |\n");
+	printf ("\t\t\t|1.Daftar Makanan dan Minuman                        |\n");
+	printf ("\t\t\tNomor menu yang ingin dipilih :");
+	scanf("%d",&usermakananminuman);
+		if(usermakananminuman==1){
+			system("cls"); //Membersihkan tampilan yang ada pada command prompt
+			daftarMenuUser();
+		}
+}
 
+void daftarMenuUser(){
+	char makanan;
+	char minuman;
+	printf ("\t\t\t|====================================================|\n");      
+	printf ("\t\t\t|             BERIKUT DAFTAR MENU MAKANAN            |\n");
+	printf ("\t\t\t|====================================================|\n");
+	FILE*list_makanan;
+	list_makanan=fopen ("../UAS-Tugas Akhir/DaftarMakanan.txt","r");
+	if (list_makanan != NULL){
+		while ((makanan=fgetc(list_makanan))!=EOF){
+			printf ("%c",makanan);
+		}
+	}else {
+		printf ("\tError : File tidak terbaca\n");
+		printf ("\tPress any key to continue ...\n");
+		getch();
+	}
+	fclose(list_makanan);
+
+	
+	printf ("\t\t\t|====================================================|\n");      
+	printf ("\t\t\t|             BERIKUT DAFTAR MENU MINUMAN            |\n");
+	printf ("\t\t\t|====================================================|\n");
+	FILE*list_minuman;
+	list_minuman=fopen ("../UAS-Tugas Akhir/DaftarMinuman.txt","r");
+	if (list_minuman != NULL){
+		while ((minuman=fgetc(list_minuman))!=EOF){
+			printf ("%c",minuman);
+		}
+	}else {
+		printf ("\tError : File tidak terbaca\n");
+		printf ("\tPress any key to continue ...\n");
+		getch();
+	}
+	fclose(list_minuman);
+	printf ("\tTekan tombol apa saja untuk kembali ke menu admin utama\n");
+	getch();
+	system("cls");
+	start();
+}
